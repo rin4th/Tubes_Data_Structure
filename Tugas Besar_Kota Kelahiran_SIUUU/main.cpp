@@ -27,7 +27,8 @@ int main()
         cout<<endl<<"\t\tMain Menu"<<endl<<endl;
         cout<<"1. Menambah Data."<<endl;
         cout<<"2. Menampilkan Data."<<endl;
-        cout<<"3. Menghapus Data."<<endl;
+        cout<<"3. Memperbarui Data."<<endl;
+        cout<<"4. Menghapus Data."<<endl;
         cout<<"0. Exit."<<endl;
 
         char pilih;
@@ -49,6 +50,9 @@ int main()
             break;
         case '2':
             menuMenampilkanData(N, pilih, loop);
+            break;
+        case '3':
+            menuUpdateData(N, pilih, loop);
             break;
         case '4':
             menuMenghapusData(N, pilih, loop);

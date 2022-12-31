@@ -103,6 +103,7 @@ void printKota(ListNegara N){
         int counter = 1;
         while (p != nil){
             cout<<"["<<counter<<"]\tNama Kota : "<<infoKota(p).namaKota;
+            cout<<"\n\tProvinsi : "<<infoKota(p).provinsi;
             cout<<"\n\tJumlah Penduduk : "<<infoKota(p).jmlPenduduk<<endl<<endl;
             p = nextKota(p);
             counter++;
@@ -122,9 +123,12 @@ void printOrang(ListNegara N, string kota){
     }else{
         adrOrang q = child(p);
         int counter = 1;
+        if (q == nil){
+            cout<<"Tidak ada Data Warga";
+        }
         while (q != nil){
             cout<<"["<<counter<<"]\tNama : "<<infoOrang(q).nama<<"\n\tTanggal Lahir : ";
-            cout<<infoOrang(q).tanggal<<"\n\tUsia : "<<infoOrang(q).usia<<endl<<endl;
+            cout<<infoOrang(q).tanggal<<"\n\tJenis Kelamin : "<<infoOrang(q).jenisKelamin<<"\n\tUsia : "<<infoOrang(q).usia<<endl<<endl;
             q = nextOrang(q);
             counter++;
         }

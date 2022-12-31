@@ -16,3 +16,20 @@
 1672454580 source:d:\code\cpp\tubes\tugas besar_kota kelahiran_siuuu\menu.cpp
 	"kota.h"
 
+1672456471 source:d:\code\cpp\tubes_data_structure\tugas besar_kota kelahiran_siuuu\kota.cpp
+	"kota.h"
+
+1672402185 d:\code\cpp\tubes_data_structure\tugas besar_kota kelahiran_siuuu\kota.h
+	<iostream>
+	<stdlib.h>
+	<unistd.h>
+	<cctype>
+	<algorithm>
+	<string>
+
+1672402200 source:d:\code\cpp\tubes_data_structure\tugas besar_kota kelahiran_siuuu\main.cpp
+	"kota.h"
+
+1672456320 source:d:\code\cpp\tubes_data_structure\tugas besar_kota kelahiran_siuuu\menu.cpp
+	"kota.h"
+

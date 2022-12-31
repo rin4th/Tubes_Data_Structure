@@ -17,6 +17,8 @@ void menuMenambahData(ListNegara &N, char pilihan, char loop){
                 cout<<"Masukan Nama Kota : ";
                 getline(cin, kota.namaKota);
                 getline(cin, kota.namaKota);
+                cout<<"Masukan Provinsi : ";
+                getline(cin, kota.provinsi);
                 cout<<"Masukan Jumlah Penduduk : ";
                 cin>>kota.jmlPenduduk;
 
@@ -38,15 +40,16 @@ void menuMenambahData(ListNegara &N, char pilihan, char loop){
                 string kotaLahir;
                 cout<<"\t\tMenambah Kota Lahir Penduduk\n\n";
                 cout<<"Masukan Nama Warga : ";
-                cin.get();
+                getline(cin, orang.nama);
                 getline(cin, orang.nama);
                 cout<<"Masukan NIK : ";
                 cin>>orang.nik;
                 cout<<"Masukan Tanggal Lahir : ";
                 getline(cin, orang.tanggal);
+                cout<<"Masukan Jenis Kelamin : ";
+                getline(cin, orang.jenisKelamin);
                 cout<<"Masukan Kota Kelahiran : ";
-                cin.ignore();
-                cin>>kotaLahir;
+                getline(cin, kotaLahir);
                 cout<<"Masukan Usia : ";
                 cin>>orang.usia;
 
@@ -174,9 +177,14 @@ void menuUpdateData(ListNegara &N, char pilihan, char loop){
 
                 adrKota foundKota = findKota(N, namaKota);
                 cout<<"Masukan Nama Kota : ";
-                cin>>infoKota(foundKota).namaKota;
+                getline(cin, infoKota(foundKota).namaKota);
+                getline(cin, infoKota(foundKota).namaKota);
+                cout<<"Masukan nama Provinsi : ";
+                getline(cin, infoKota(foundKota).provinsi);
+                getline(cin, infoKota(foundKota).provinsi);
                 cout<<"Masukan Jumlah Penduduk : ";
                 cin>>infoKota(foundKota).jmlPenduduk;
+
 
                 cout<<endl<<"Kota Berhasil Diperbarui!!!"<<endl<<endl;
                 cout<<"Memperbarui Kota lainya?? (Y/N) : ";
@@ -188,10 +196,10 @@ void menuUpdateData(ListNegara &N, char pilihan, char loop){
                 string nama, kota;
                 cout<<"\t\tMemperbarui Data Kota Lahir Penduduk\n\n";
                 cout<<"Masukan Nama Warga : ";
-                cin.get();
+                getline(cin, nama);
                 getline(cin, nama);
                 cout<<"Masukan Kota Kelahiran : ";
-                cin.get();
+                getline(cin, kota);
                 getline(cin, kota);
                 cout<<endl;
 
@@ -246,7 +254,8 @@ void menuMenghapusData(ListNegara &N, char pilihan, char loop){
                 string namaKota;
                 cout<<"\t\tMenghapus Kota\n\n";
                 cout<<"Masukan Nama Kota : ";
-                cin>>namaKota;
+                getline(cin, namaKota);
+                getline(cin, namaKota);
 
                 adrKota deletedKota = deleteKota(N, namaKota);
 
