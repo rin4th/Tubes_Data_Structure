@@ -11,12 +11,11 @@ int main()
     createListNegara(N);
 
     char menu = 'Y';
-    logo();
 
     while (menu == 'Y' || menu == 'y'){
+        logo();
         cout<<"===================================================="<<endl;
         cout<<"\t\tTugas Besar"<<endl;
-
         cout<<"Judul\t: Kota Lahir"<<endl;
         cout<<"Tema\t: Multi Linked-List Tipe B (1 to N)"<<endl;
         cout<<"Anggota :"<<endl;

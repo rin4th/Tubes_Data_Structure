@@ -43,7 +43,7 @@ void menuMenambahData(ListNegara &N, char pilihan, char loop){
                 getline(cin, orang.nama);
                 getline(cin, orang.nama);
                 cout<<"Masukan NIK : ";
-                cin>>orang.nik;
+                getline(cin, orang.nik);
                 cout<<"Masukan Tanggal Lahir : ";
                 getline(cin, orang.tanggal);
                 cout<<"Masukan Jenis Kelamin : ";
@@ -75,7 +75,7 @@ void menuMenambahData(ListNegara &N, char pilihan, char loop){
         }else{
             cout<<endl<<"WRONG INPUT!!!"<<endl<<endl;
             cout<<"Automation Back To Main Menu...";
-            sleep(2);
+            sleep(1);
             system("cls");
         }
 }
@@ -117,7 +117,7 @@ void menuMenampilkanData(ListNegara N, char pilihan, char loop){
                 system("cls");
 
             }else if (pilihan == '3'){
-                cout<<"\t\Menampilkan Data Penduduk pada Suatu Kota\n\n";
+                cout<<"\t\tMenampilkan Data Penduduk pada Suatu Kota\n\n";
                 cout<<"Masukan Nama Kota : ";
                 cin.get();
                 getline(cin, namaKota);
@@ -171,35 +171,44 @@ void menuUpdateData(ListNegara &N, char pilihan, char loop){
         if (pilihan == '1'){
             while (loop == 'Y' || loop == 'y'){
                 string namaKota;
-                cout<<"\t\tUpdate Kota\n\n";
-                cout<<"Masukan Nama Kota : ";
+                cout<<"\t\tMemperbarui Kota\n\n";
+                cout<<"Masukan Nama Kota Lama : ";
                 cin>>namaKota;
 
                 adrKota foundKota = findKota(N, namaKota);
-                cout<<"Masukan Nama Kota : ";
-                getline(cin, infoKota(foundKota).namaKota);
-                getline(cin, infoKota(foundKota).namaKota);
-                cout<<"Masukan nama Provinsi : ";
-                getline(cin, infoKota(foundKota).provinsi);
-                getline(cin, infoKota(foundKota).provinsi);
-                cout<<"Masukan Jumlah Penduduk : ";
-                cin>>infoKota(foundKota).jmlPenduduk;
+
+                if (foundKota != nil){
+                    cout<<"\n\tMemperbarui Kota "<<infoKota(foundKota).namaKota<<endl;
+                    cout<<"\nMasukan Nama Kota Baru : ";
+                    getline(cin, infoKota(foundKota).namaKota);
+                    getline(cin, infoKota(foundKota).namaKota);
+                    cout<<"Masukan nama Provinsi Baru : ";
+                    getline(cin, infoKota(foundKota).provinsi);
+                    cout<<"Masukan Jumlah Penduduk Baru : ";
+                    cin>>infoKota(foundKota).jmlPenduduk;
+
+                    cout<<endl<<"Kota Berhasil Diperbarui!!!"<<endl<<endl;
+                }else{
+                    cout<<"\n\tKota "<<namaKota<<" Tidak Ditemukan\n\n";
+                }
 
 
-                cout<<endl<<"Kota Berhasil Diperbarui!!!"<<endl<<endl;
                 cout<<"Memperbarui Kota lainya?? (Y/N) : ";
                 cin>>loop;
                 cout<<endl;
             }
+            cout<<"Back To Main Menu..."<<endl;
+            sleep(0.5);
+            system("cls");
+
         }else if (pilihan == '2'){
             while (loop == 'Y' || loop == 'y'){
                 string nama, kota;
                 cout<<"\t\tMemperbarui Data Kota Lahir Penduduk\n\n";
-                cout<<"Masukan Nama Warga : ";
+                cout<<"Masukan Nama Warga Yang Ingin Diperbarui : ";
                 getline(cin, nama);
                 getline(cin, nama);
                 cout<<"Masukan Kota Kelahiran : ";
-                getline(cin, kota);
                 getline(cin, kota);
                 cout<<endl;
 
@@ -298,7 +307,7 @@ void menuMenghapusData(ListNegara &N, char pilihan, char loop){
         }else{
             cout<<endl<<"WRONG INPUT!!!"<<endl<<endl;
             cout<<"Automation Back To Main Menu...";
-            sleep(2);
+            sleep(1);
             system("cls");
         }
 }
