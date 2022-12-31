@@ -1,0 +1,6 @@
+NOTE:
+Done 1. Tambah menu print kota by provinsi di sebmenu Menampilkan Data
+Done 2. Tambah menu Update Data di main Menu
+3. Ganti int pilihan jadi string
+
+./nama_program < input.txt
