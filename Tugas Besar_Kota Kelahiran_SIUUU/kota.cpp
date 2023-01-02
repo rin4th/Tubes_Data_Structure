@@ -54,10 +54,17 @@ void addOrang(ListNegara &N, string kota, adrOrang orang){
     }else{
         adrOrang q = child(p);
         while (nextOrang(q) != nil){
+            if (infoOrang(q).nik == infoOrang(orang).nik){
+                break;
+            }
             q = nextOrang(q);
         }
-        nextOrang(q) = orang;
-        infoKota(p).jmlPenduduk++;
+        if (infoOrang(q).nik != infoOrang(orang).nik){
+            nextOrang(q) = orang;
+            infoKota(p).jmlPenduduk++;
+        }else{
+            cout<<"\n\tDuplicated Data!!!\n";
+        }
     }
 }
 
@@ -147,12 +154,12 @@ void printKotaByProvince(ListNegara N, string provinsi){
     }else{
         int counter = 1;
         while (p != nil){
-            if (infoKota(p).provinsi == provinsi){
+            if (to_lower(infoKota(p).provinsi) == to_lower(provinsi)){
                 cout<<"["<<counter<<"]\tNama Kota : "<<infoKota(p).namaKota<<"\n\tProvinsi : ";
                 cout<<infoKota(p).provinsi<<"\n\tJumlah Penduduk : "<<infoKota(p).jmlPenduduk<<endl<<endl;
-                p = nextKota(p);
                 counter++;
             }
+            p = nextKota(p);
         }
     }
 }

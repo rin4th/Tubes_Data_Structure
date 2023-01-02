@@ -35,7 +35,7 @@ int main()
         cin>>pilih;
         sleep(0.5);
 
-        if (pilih == '1' || pilih == '2' || pilih == '3'){
+        if (pilih == '1' || pilih == '2' || pilih == '3' || pilih == '4'){
             system("cls");
             cout<<"Loading..."<<endl;
             sleep(0.5);
